@@ -751,6 +751,7 @@ body {
 
 #happy-clients {
     margin: 40% 10px;
+    overflow: hidden;
 }
 
 .testimonials {

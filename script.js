@@ -65,30 +65,29 @@ const nextBtn =
 
 let testimonialIndex = 0;
 
-
 function updateTestimonials() {
     if (!testimonialCards.length) return;
+
     const card = testimonialCards[testimonialIndex];
     const moveAmount = card.offsetLeft;
+
     testimonialWrapper.style.transform =
         `translateX(-${moveAmount}px)`;
 }
 
 nextBtn.addEventListener("click", () => {
 
-    testimonialIndex += 2;
-    if (testimonialIndex >= testimonialCards.length) {
-        testimonialIndex = 0;
+    if (testimonialIndex + 2 < testimonialCards.length) {
+        testimonialIndex += 2;
     }
+
     updateTestimonials();
 });
 
 previousBtn.addEventListener("click", () => {
 
-    testimonialIndex -= 2;
-    if (testimonialIndex < 0) {
-        testimonialIndex =
-            testimonialCards.length - 0;
+    if (testimonialIndex - 2 >= 0) {
+        testimonialIndex -= 2;
     }
 
     updateTestimonials();
